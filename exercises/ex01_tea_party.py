@@ -2,7 +2,7 @@
 
 __author__ = "730471301"
 
-def tea_bags (people: int)
-    '''computes number of tea bags based on number of guests'''
-    return people*2
 
+def tea_bags(people: int) --> int:
+    """computes number of tea bags based on number of guests"""
+    return people * 2
