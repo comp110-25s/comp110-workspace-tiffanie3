@@ -4,10 +4,10 @@ __author__ = "730471301"
 
 
 def tea_bags(people: int) -> int:
-    """computes number of tea bags based on number of guests"""
+    """computes # of tea bags based on # of guests"""
     return people * 2
 
 
-tea_bags(people=2)
-
-tea_bags(people=334)
+def treats(people: int) -> int:
+    """computes the # of treats needed based on the # of teas guests are expected to drink"""
+    return int(tea_bags * 1.5)
