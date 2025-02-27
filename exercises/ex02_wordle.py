@@ -6,11 +6,37 @@ __author__ = "730471301"
 
 
 def contains_char(word: str, letter: str) -> bool:
+    """determines if a letter (one character) is in word"""
     assert len(letter) == 1, f"len('{letter}') is not 1"
-    """determines if a letter is in word"""
     index: int = 0
     while index < len(word):
         if word[index] == letter:
             return True
         index = index + 1
     return False
+
+
+"""Part 2: emojified"""
+
+
+def emojified(guess: str, secret: str) -> str:
+    """returns a string of colored squares"""
+    assert len(guess) == len(secret), "Guess must be same length as secret"
+    WHITE_BOX: str = "\U00002B1C"
+    GREEN_BOX: str = "\U0001F7E9"
+    YELLOW_BOX: str = "\U0001F7E8"
+    emojis: str = ""
+    index: int = 0
+    while index < len(secret):
+        if guess[index] == secret[index]:
+            emojis = emojis + GREEN_BOX
+        else:
+            if contains_char(word=secret, letter=guess[index]) == True:
+                emojis = emojis + YELLOW_BOX
+            if contains_char(word=secret, letter=guess[index]) == False:
+                emojis = emojis + WHITE_BOX
+        index = index + 1
+    return emojis
+
+
+"""Part 3: """
