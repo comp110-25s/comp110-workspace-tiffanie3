@@ -23,7 +23,7 @@ def tea_bags(people: int) -> int:
 
 
 def treats(people: int) -> int:
-    """computes the # of treats needed based on the # of teas guests are expected to drink"""
+    """computes # treats based on # teas guests drink"""
     return int(tea_bags(people=people) * 1.5)
 
 
