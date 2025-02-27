@@ -39,4 +39,11 @@ def emojified(guess: str, secret: str) -> str:
     return emojis
 
 
-"""Part 3: """
+"""Part 3: input_guess"""
+
+
+def input_guess(n: int) -> str:
+    input_word: str = input(f"Enter a {n} character word:")
+    while len(input_word) != n:
+        input_word = input(f"That wasn't {n} chars! Try again:")
+    return input_word
