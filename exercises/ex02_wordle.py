@@ -65,3 +65,8 @@ def main(secret: str) -> None:
             return print(f"You won in {turn}/6 turns!")
         turn = turn + 1
     return print("X/6 - Sorry, try again tomorrow!")
+
+
+"""make it a module"""
+if __name__ == "__main__":
+    main(secret="codes")
