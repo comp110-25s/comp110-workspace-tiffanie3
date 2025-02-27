@@ -51,3 +51,17 @@ def input_guess(n: int) -> str:
 
 
 """Part 4: main"""
+
+
+def main(secret: str) -> None:
+    """The entrypoint of the program and main game loop."""
+    turn: int = 1
+    n = len(secret)
+    while turn <= 6:
+        print(f"=== Turn {turn}/6 ===")
+        guess: str = input_guess(n)
+        print(emojified(guess=guess, secret=secret))
+        if secret == guess:
+            return print(f"You won in {turn}/6 turns!")
+        turn = turn + 1
+    return print("X/6 - Sorry, try again tomorrow!")
