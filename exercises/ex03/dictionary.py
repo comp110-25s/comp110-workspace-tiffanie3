@@ -39,7 +39,7 @@ def favorite_color(sample: dict[str, str]) -> str:
     while idx < len(color_list):
         for color in dictionary_color:
             color_compare: str = color_list[idx]
-            if dictionary_color[color_compare] <= dictionary_color[color]:
+            if dictionary_color[color_compare] < dictionary_color[color]:
                 idx += 1
             else:
                 color_popular: str = color_compare
