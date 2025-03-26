@@ -35,12 +35,13 @@ def favorite_color(sample: dict[str, str]) -> str:
     for name in sample:
         color_list.append(sample[name])
     dictionary_color: dict[str, int] = count(color_list)
-    idx: int = 0
-    while idx < len(color_list):
-        for color in dictionary_color:
-            color_compare: str = color_list[idx]
-            if dictionary_color[color_compare] < dictionary_color[color]:
-                idx += 1
-            else:
-                color_popular: str = color_compare
+    color_popular: str = ""
+    color_count: int = 0
+    for color in dictionary_color:
+        if dictionary_color[color] > color_count:
+            color_count = dictionary_color[color]
+            color_popular = color
     return color_popular
+
+def bin_len(words: list[str]) -> dict[int,set[str]]:
+    ##how do you add to a directorY?

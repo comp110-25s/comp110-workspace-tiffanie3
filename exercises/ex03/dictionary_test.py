@@ -82,3 +82,9 @@ def test_favorite_color3() -> None:
     """Test third use case for favorite_color"""
     dict_color: dict[str, str] = {"cat": "orange", "dog": "yellow", "guinea pig": "red"}
     assert favorite_color(dict_color) == "orange"
+
+
+def test_favorite_color4() -> None:
+    """Test edge case for favorite_color"""
+    dict_color: dict[str, str] = {}
+    assert favorite_color(dict_color) == ""
