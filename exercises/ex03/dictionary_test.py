@@ -38,18 +38,18 @@ def test_count_colors() -> None:
 
 def test_count_letters() -> None:
     """Test use case for count with letters"""
-    list: list[str] = ["a", "b", "c", "d", "1", "a"]
-    assert count(list) == {"a": 2, "b": 1, "c": 1, "d": 1, "1": 1}
+    list_letters: list[str] = ["a", "b", "c", "d", "1", "a"]
+    assert count(list_letters) == {"a": 2, "b": 1, "c": 1, "d": 1, "1": 1}
 
 
 def test_count_empty() -> None:
     """Test edge case for count with empty list"""
-    list: list[str] = []
-    assert count(list) == {}
+    list_empty: list[str] = []
+    assert count(list_empty) == {}
 
 
-def test_favorite_color() -> None:
-    """Test use case for favorite_color"""
+def test_favorite_color1() -> None:
+    """Test first use case for favorite_color"""
     dict_color: dict[str, str] = {
         "Tiffanie": "blue",
         "Brandon": "blue",
@@ -58,3 +58,21 @@ def test_favorite_color() -> None:
         "Kimberly": "teal",
     }
     assert favorite_color(dict_color) == "blue"
+
+
+def test_favorite_color2() -> None:
+    """Test second use case for favorite_color"""
+    dict_color: dict[str, str] = {
+        "Bear": "black",
+        "Panda": "white",
+        "Capybara": "red",
+        "Cow": "orange",
+        "Squirrel": "yellow",
+        "Coconut": "blue",
+        "Violet": "purple",
+        "Tapir": "red",
+        "Spider": "orange",
+        "Bee": "purple",
+        "Monkey": "purple",
+    }
+    assert favorite_color(dict_color) == "purple"
