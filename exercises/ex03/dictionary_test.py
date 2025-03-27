@@ -4,6 +4,7 @@ from exercises.ex03.dictionary import invert
 import pytest
 from exercises.ex03.dictionary import count
 from exercises.ex03.dictionary import favorite_color
+from exercises.ex03.dictionary import bin_len
 
 
 def test_invert_with_letters() -> None:
@@ -88,3 +89,25 @@ def test_favorite_color4() -> None:
     """Test edge case for favorite_color"""
     dict_color: dict[str, str] = {}
     assert favorite_color(dict_color) == ""
+
+
+def test_bin_len1() -> None:
+    """Test use case for bin_len1"""
+    assert bin_len(["the", "quick", "fox"]) == {3: {"the", "fox"}, 5: {"quick"}}
+
+
+def test_bin_len2() -> None:
+    """Test use case for bin_len2"""
+    assert bin_len(["the", "the", "fox"]) == {3: {"the", "fox"}}
+
+
+def test_bin_len3() -> None:
+    """Test use case for bin_len3"""
+    assert bin_len(
+        ["the", "the", "the", "the", "fox", "fox", "tiffanie", "twenty-five"]
+    ) == {3: {"the", "fox"}, 8: {"tiffanie"}, 11: {"twenty-five"}}
+
+
+def test_bin_len_empty() -> None:
+    """Test edge case for bin_len"""
+    assert bin_len([]) == {}

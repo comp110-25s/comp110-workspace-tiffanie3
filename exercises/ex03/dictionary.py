@@ -43,5 +43,16 @@ def favorite_color(sample: dict[str, str]) -> str:
             color_popular = color
     return color_popular
 
-def bin_len(words: list[str]) -> dict[int,set[str]]:
-    ##how do you add to a directorY?
+
+def bin_len(word_list: list[str]) -> dict[int, set[str]]:
+    idx: int = 0
+    bin_dict: dict[int, set[str]] = {}
+    while idx < len(word_list):
+        word: str = word_list[idx]
+        length: int = len(word)
+        if length in bin_dict:
+            bin_dict[length].add(word)
+        else:
+            bin_dict[length] = {word}
+        idx += 1
+    return bin_dict
