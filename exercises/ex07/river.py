@@ -40,6 +40,13 @@ class River:
     def check_hunger(self):
         return None
 
+    def remove_fish(self, amount: int):
+        idx: int = 0
+        while idx < amount:
+            self.fish.pop(0)
+            idx = idx + 1
+        return None
+
     def repopulate_fish(self):
         return None
 
