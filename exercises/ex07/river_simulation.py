@@ -1,7 +1,12 @@
+"""Simulate a river"""
+
+__author__ = "730471301"
+
+
 from exercises.ex07.river import River
 
-my_river: River = River(10, 2)
+my_river: River = River(30, 5)
 
 my_river.view_river()
 
-my_river.one_river_week()
+print(my_river.check_ages)
