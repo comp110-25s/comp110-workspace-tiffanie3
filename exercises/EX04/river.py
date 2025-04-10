@@ -17,9 +17,9 @@ class River:
         self.fish: list[Fish] = []
         self.bears: list[Bear] = []
         # populate the river with fish and bears
-        for _ in range(0, num_fish):
+        for fish in range(0, num_fish):
             self.fish.append(Fish())
-        for _ in range(0, num_bears):
+        for bear in range(0, num_bears):
             self.bears.append(Bear())
 
     def check_ages(self) -> None:
@@ -58,7 +58,15 @@ class River:
             idx = idx + 1
         return None
 
-    def repopulate_fish(self):
+    def repopulate_fish(self) -> None:
+        adult_fish: int = len(self.fish)
+        baby_fish: int = 0
+        total_fish = self.fish
+        for fish in self.fish:
+            while baby_fish < (adult_fish // 2) * 4:
+                total_fish.append(fish)
+                baby_fish += 1
+        self.fish = total_fish
         return None
 
     def repopulate_bears(self) -> None:
