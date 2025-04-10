@@ -3,9 +3,9 @@
 __author__ = "730471301"
 
 
-from exercises.ex07.river import River
+from exercises.EX04.river import River
 
-my_river: River = River(30, 5)
+my_river: River = River(0, 0)
 
 my_river.view_river()
 

@@ -1,7 +1,9 @@
 """File to define River class."""
 
-from exercises.ex04.fish import Fish
-from exercises.ex04.bear import Bear
+__author__ = "730471301"
+
+from exercises.EX04.fish import Fish
+from exercises.EX04.bear import Bear
 
 
 class River:
@@ -22,30 +24,30 @@ class River:
 
     def check_ages(self) -> None:
         surviving_fish = []
-        for Fish in self.fish:
-            if Fish.age <= 3:
-                surviving_fish.append(Fish)
+        for fish in self.fish:
+            if fish.age <= 3:
+                surviving_fish.append(fish)
         self.fish = surviving_fish
 
         surviving_bears = []
-        for Bear in self.bears:
-            if Bear.age <= 5:
-                surviving_bears.append(Bear)
+        for bear in self.bears:
+            if bear.age <= 5:
+                surviving_bears.append(bear)
         self.bears = surviving_bears
         return None
 
     def bears_eating(self) -> None:
-        for Bear in self.bears:
+        for bear in self.bears:
             if len(self.fish) >= 5:
                 self.remove_fish(3)
-                Bear.eat(num_fish=3)
+                bear.eat(num_fish=3)
         return None
 
     def check_hunger(self) -> None:
         surviving_bears = []
-        for Bear in self.bears:
-            if Bear.hunger_score >= 0:
-                surviving_bears.append(Bear)
+        for bear in self.bears:
+            if bear.hunger_score >= 0:
+                surviving_bears.append(bear)
         self.bears = surviving_bears
         return None
 
@@ -59,7 +61,15 @@ class River:
     def repopulate_fish(self):
         return None
 
-    def repopulate_bears(self):
+    def repopulate_bears(self) -> None:
+        adult_bears: int = len(self.bears)
+        baby_bears: int = 0
+        total_bears = self.bears
+        for bear in self.bears:
+            while baby_bears < adult_bears // 2:
+                total_bears.append(bear)
+                baby_bears += 1
+        self.bears = total_bears
         return None
 
     def view_river(self) -> None:
