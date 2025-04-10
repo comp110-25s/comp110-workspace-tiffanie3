@@ -9,4 +9,4 @@ my_river: River = River(30, 5)
 
 my_river.view_river()
 
-print(my_river.check_ages)
+my_river.one_river_week()

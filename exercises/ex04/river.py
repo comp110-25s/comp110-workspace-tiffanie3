@@ -38,7 +38,7 @@ class River:
         for Bear in self.bears:
             if len(self.fish) >= 5:
                 self.remove_fish(3)
-                Bear.eat(3)
+                Bear.eat(num_fish=3)
         return None
 
     def check_hunger(self) -> None:
